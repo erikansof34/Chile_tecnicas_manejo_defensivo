@@ -1,0 +1,36 @@
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.p-ancho {
+  padding: 3rem;
+}
+
+.dp-none {
+  display: none !important;
+}
+
+/* Por defecto (Web) */
+.img-m {
+  display: none;
+}
+
+.img-w {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .img-m {
+    display: block;
+  }
+
+  .img-w {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .dp-none {
+    display: block !important;
+  }
+}
