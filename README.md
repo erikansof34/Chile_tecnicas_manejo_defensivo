@@ -1,1 +1,0 @@
-# Chile_tecnicas_manejo_defensivo

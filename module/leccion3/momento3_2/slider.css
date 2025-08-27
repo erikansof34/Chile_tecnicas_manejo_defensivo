@@ -1,0 +1,300 @@
+/* Contenedor principal */
+.quiz-container-acc-traf {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Contenedor de tarjetas - Versión Web (siempre en fila) */
+.cards-container-acc-traf {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+/* Scrollbar personalizada para navegadores WebKit */
+.cards-container-acc-traf::-webkit-scrollbar {
+    height: 6px;
+}
+
+.cards-container-acc-traf::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.cards-container-acc-traf::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.cards-container-acc-traf::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Estilo de cada tarjeta */
+.card-container-acc-traf {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    width: 270px;
+    /* Ancho fijo */
+    min-width: 270px;
+    /* Ancho mínimo fijo */
+    max-width: 270px;
+    /* Ancho máximo fijo */
+    /* height: 450px; */
+    /* Altura fija */
+    flex: 0 0 320px;
+    /* Flex fijo para evitar cambios de tamaño */
+    box-sizing: border-box;
+}
+
+.card-container-acc-traf.correct-acc-traf {
+    background-color: #4caf50;
+    border: 1px solid #388e3c;
+}
+
+.card-container-acc-traf.incorrect-acc-traf {
+    background-color: #f44336;
+    border: 1px solid #d32f2f;
+}
+
+/* Textos en blanco cuando la card tiene color */
+.card-container-acc-traf.correct-acc-traf .card-title-acc-traf,
+.card-container-acc-traf.correct-acc-traf .info-text-acc-traf,
+.card-container-acc-traf.correct-acc-traf .feedback-text-acc-traf,
+.card-container-acc-traf.incorrect-acc-traf .card-title-acc-traf,
+.card-container-acc-traf.incorrect-acc-traf .info-text-acc-traf,
+.card-container-acc-traf.incorrect-acc-traf .feedback-text-acc-traf {
+    color: white !important;
+}
+
+/* Título de la tarjeta */
+.card-title-acc-traf {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0f1721;
+    text-align: center;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    height: 20px;
+    /* Altura fija para el título */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor de imagen */
+.image-container-acc-traf {
+    position: relative;
+    width: 100%;
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    /* Altura fija para el contenedor de imagen */
+}
+
+/* Imagen de la tarjeta */
+.card-image-acc-traf {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+/* Contenedor de textos informativos */
+.info-texts-container-acc-traf {
+    width: 100%;
+    margin-bottom: 0.8rem;
+    height: 80px;
+    /* Altura fija para los textos informativos */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Texto informativo */
+.info-text-acc-traf {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 0.3rem;
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.3;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.info-text-acc-traf:before {
+    content: "•";
+    position: absolute;
+    left: 0.3rem;
+}
+
+/* Contenedor del select */
+.select-container-acc-traf {
+    width: 100%;
+    position: relative;
+    margin-bottom: 0.5rem;
+    height: 42px;
+    /* Altura fija para el select */
+}
+
+.select-container-acc-traf select {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #0f1721;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #333;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.select-container-acc-traf::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 0.8rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 0.7rem;
+    color: #0f1721;
+}
+
+/* Select con colores claros */
+.select-container-acc-traf select.correct-select-acc-traf {
+    background-color: #e8f5e9;
+    border-color: #4caf50;
+}
+
+.select-container-acc-traf select.incorrect-select-acc-traf {
+    background-color: #ffebee;
+    border-color: #f44336;
+}
+
+/* Ícono de validación */
+.validation-icon-container-acc-traf {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+}
+
+.validation-icon-acc-traf {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+/* Texto de feedback */
+.feedback-text-acc-traf {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    width: 100%;
+    text-align: center;
+    padding: 0.2rem;
+    border-radius: 4px;
+    height: 24px;
+    /* Altura fija para el feedback */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback-text-acc-traf.correct-feedback-acc-traf {
+    color: #2e7d32;
+}
+
+.feedback-text-acc-traf.incorrect-feedback-acc-traf {
+    color: #c62828;
+}
+
+/* Contenedor de botones */
+.buttons-container-acc-traf {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Estilos para botones deshabilitados */
+.sf-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Resultados */
+.results-container-acc-traf {
+    width: 100%;
+    text-align: center;
+}
+
+.results-text-acc-traf {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #8f8f8f;
+    margin-bottom: 0.4rem;
+}
+
+/* Media queries para móvil */
+@media (max-width: 768px) {
+    .cards-container-acc-traf {
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        overflow-x: visible;
+        gap: 1rem;
+    }
+
+    .card-container-acc-traf {
+        width: 100%;
+        max-width: 350px;
+        min-width: unset;
+        height: auto;
+        margin: 0 auto;
+        flex: none;
+    }
+
+    .info-texts-container-acc-traf {
+        height: auto;
+    }
+
+    .info-text-acc-traf {
+        font-size: 16px;
+    }
+
+    .buttons-container-acc-traf {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+}

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía del Usuario</title>
+
+    <link rel="stylesheet" type="text/css" href="../../plugins/libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../plugins/css/sofactia.css">
+    <link rel="stylesheet" type="text/css" href="../../plugins/css/inicio.css">
+
+    <!--iconos-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Estilos del widget -->
+    <link rel="stylesheet" href="../../plugins/libs/assetsWidget/css/widget.css">
+</head>
+
+<body class="sf-scroll-y-hidden sf-bg-inicio">
+    <div class="container-2">
+        <header>
+            <h1 class="sf-txt-1xl-700 sf-text-center">
+                Bienvenido/a a nuestra <span class="sf-text-purple">plataforma de aprendizaje</span>
+                en línea
+            </h1>
+            <div class="sf-text-center sf-py--5r">
+                <i class="hipt hipt-light">
+                    Haz clic sobre los botones y a medida que avanzas podras presentar el curso
+                    <i class="icon-inline icon-inline--end fa-solid fa-arrow-turn-down"></i>
+                </i>
+            </div>
+            <!-- Barra de progreso -->
+            <div class="sf-progress-container sf-mt-5r">
+                <div class="sf-progress-bar sf-progress-bar-pink" id="progress-bar"></div>
+            </div>
+        </header>
+        <section>
+            <!-- Tabs -->
+            <div class="sf-tabs sf-tabs-4 sf-my-r3">
+                <button class="sf-tab" id="tab1" onclick="changeTab(1)">
+                    <i class="fas fa-book-open"></i> Guía del Usuario
+                    <span class="sf-icon-check" id="check1"></span> <!-- Este es el ícono del check -->
+                </button>
+                <button class="sf-tab" id="tab2" onclick="changeTab(2)">
+                    <i class="fas fa-user-graduate"></i> Objetivos de aprendizaje
+                    <span class="sf-icon-check" id="check2"></span>
+                </button>
+                <button class="sf-tab" id="tab3" onclick="changeTab(3)">
+                    <i class="fa fa-clipboard"></i> Glosario
+                    <span class="sf-icon-check" id="check3"></span>
+                </button>
+                <button class="sf-tab" id="tab4" onclick="changeTab(4)">
+                    <i class="fas fa-folder-tree"></i> Estructura Temática
+                    <span class="sf-icon-check" id="check4"></span>
+                </button>
+            </div>
+
+            <section class="scroll-box sf-content-tabs">
+                <!-- guia del usuario -->
+                <div class="p-4" id="content1">
+                    <h1 class="sf-txt-1xl-700 sf-text-center sf-pb-1r">Guía del <span
+                            class="sf-text-purple">Usuario</span>
+                    </h1>
+                    <div class="row">
+                        <!-- Requisitos técnicos -->
+                        <div class="col-md-12 col-lg-5">
+                            <div class="title-icon">
+                                <i class="icon icon-purple fas fa-desktop"></i>
+                                <span>Requisitos técnicos</span>
+                            </div>
+                            <p class="ms-5 text-justify">Para aprovechar al máximo tu experiencia, te recomendamos
+                                acceder al curso
+                                desde un
+                                navegador actualizado (como Google Chrome o Mozilla Firefox), preferiblemente desde
+                                un
+                                computador o tablet. Usa una conexión estable a internet para evitar interrupciones
+                                al
+                                visualizar videos o realizar actividades.</p>
+                        </div>
+                        <!-- Navegación del curso -->
+                        <div class="col-md-12 col-lg-7">
+                            <div class="title-icon">
+                                <i class="icon icon-purple fas fa-globe"></i>
+                                <span>Navegación del curso</span>
+                            </div>
+                            <ul class="ms-5 mb-0 text-justify">
+                                <li>Navega utilizando los botones de avance y retroceso para recorrer el contenido.
+                                </li>
+                                <li>Puedes
+                                    pausar o repetir los videos y audios cuantas veces necesites.</li>
+                                <li>Antes de iniciar, debes
+                                    realizar la evaluación diagnóstica para validar qué conocimientos previos ya
+                                    traes y
+                                    te van a ayudar a comprender mejor los contenidos del curso. </li>
+                                <li>Debes revisar cada lección y sus contenidos, asegúrate de completar cada una
+                                    antes
+                                    de pasar a la siguiente.</li>
+                                <li>Recuerda marcar como completadas las lecciones que vayas terminando.</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-12 mt-2">
+                            <div class="title-icon">
+                                <i class="icon icon-purple fas fa-globe"></i>
+                                <span>Importante</span>
+                            </div>
+                            <!-- <div class="bullet ms-5">
+                                <i class="icon icon-purple fas fa-arrow-right"></i>
+                                <p>Es muy importante que <strong>completes al menos el 80% de la revisión de
+                                        contenidos y recursos del curso,</strong> para poder presentar la evaluación
+                                    sumativa, de
+                                    lo contrario no podrás presentarla.</p>
+                            </div> -->
+                            <div class="bullet ms-5">
+                                <i class="icon icon-purple fas fa-arrow-right"></i>
+                                <p>Para mayor facilidad de uso, todos nuestros recursos de audio cuentan con la
+                                    transcripción en texto para ser leídos, y todos nuestros videos tienen
+                                    subtítulos para poder acceder al contenido de forma multicanal (Visual, Oído).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- guia del participante -->
+                <div class="p-4" id="content2">
+                    <h1 class="sf-txt-1xl-700 sf-text-center sf-pb-1r">Objetivo de <span
+                            class="sf-text-purple">aprendizaje</span>
+                    </h1>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="title-icon">
+                                <i class="icon icon-purple fas fa-bullseye"></i>
+                                <span>Objetivo General</span>
+                            </div>
+                            <p class="ms-5">Aplicar protocolos de prevención vial que mejoren las conductas y actitudes
+                                durante la conducción para proteger la vida
+                                y reducir la siniestralidad en nuestras operaciones.</p>
+                        </div>
+
+                        <div class="col-md-12 mb-3">
+                            <div class="title-icon">
+                                <i class="icon icon-purple fas fa-bullseye"></i>
+                                <span>Objetivos Específicos</span>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="bullet ms-3">
+                                <i class="icon icon-purple fas fa-arrow-right"></i>
+                                <p>Recordar las técnicas de manejo defensivo más útiles para conducir de manera segura.
+                                </p>
+                            </div>
+                            <div class="bullet ms-3">
+                                <i class="icon icon-purple fas fa-arrow-right"></i>
+                                <div>
+                                    <p>Afianzar las buenas prácticas en el manejo defensivo.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bullet ms-3">
+                                <i class="icon icon-purple fas fa-arrow-right"></i>
+                                <p>Recordar los factores que ayuden a prevenir accidentes viales en nuestras
+                                    operaciones.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--glosario-->
+                <div class="p-4 w-100" id="content3">
+                    <h1 class="sf-txt-1xl-700 sf-text-center sf-pb-1r">Glosario</h1>
+                    <p class="text-center">Veamos las palabras claves que te ayudarán a comprender mejor la información
+                        valiosa de este curso:</p>
+                    <div class="row mt-3">
+                        <div class="col-sm-12 col-md-12 col-lg-12 mb-3 mb-md-0">
+                            <div class="item-glorasio">
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Accidente del trabajo:</span> Toda
+                                        lesión que una persona sufra a causa o con ocasión de su trabajo y que le
+                                        produzca incapacidad o muerte.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Accidente del trayecto:</span> Aquel que
+                                        ocurre en el recorrido directo de ida o regreso entre la habitación y el lugar
+                                        de trabajo.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Comité de Gestión del Centro:</span>
+                                        Instancia participativa para coordinar acciones en torno a la gestión de riesgos
+                                        de emergencias en el centro de trabajo, conformado por entes internos y
+                                        externos.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Controles Administrativos:</span>
+                                        Medidas como la señalización y procedimientos de trabajo seguro.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Controles de Ingeniería:</span> Medidas
+                                        que modifican el lugar de trabajo para aislar o controlar el peligro.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Cultura Preventiva:</span> La gestión
+                                        proactiva de los riesgos laborales mediante la implementación de un Sistema de
+                                        Gestión de Seguridad y Salud en el Trabajo (SGSST).</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Enfermedad Profesional:</span> Aquella
+                                        causada directamente por el ejercicio de la profesión y que produce incapacidad
+                                        temporal o permanente, o muerte.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Entorno Laboral Saludable:</span> Un
+                                        ambiente de trabajo que minimiza los riesgos para la salud y la seguridad de los
+                                        trabajadores, e integra prácticas seguras en todos los aspectos de la empresa.
+                                    </p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">EPP (Equipos de Protección
+                                            Personal):</span> Elementos de protección personal que se usan para proteger
+                                        al trabajador de riesgos específicos.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Evaluación de Riesgo:</span> El proceso
+                                        de identificar los factores de riesgo, evaluar la probabilidad de que ocurran y
+                                        determinar sus posibles impactos.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Higiene Ocupacional:</span> Busca
+                                        activamente el control de agentes peligrosos y la creación de ambientes
+                                        laborales seguros y confortables.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Liderazgo Preventivo:</span> La alta
+                                        dirección demuestra un compromiso genuino con la seguridad y salud de los
+                                        trabajadores, asignando recursos y tomando decisiones que priorizan la salud y
+                                        seguridad.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Ley N°16.744:</span> Ley que establece
+                                        un seguro social obligatorio y gratuito para accidentes del trabajo y
+                                        enfermedades profesionales en Chile.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Matriz de Riesgos:</span> Herramienta
+                                        utilizada en el SGSST para identificar peligros y evaluar riesgos de manera
+                                        constante.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">MIPER:</span> Herramienta de gestión
+                                        preventiva que se refiere a la matriz de identificación de peligros y evaluación
+                                        de riesgos.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Peligro:</span> Cualquier fuente,
+                                        situación o acto que tiene el potencial de causar daño a las personas en su vida
+                                        o salud.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Plan de Gestión de Riesgos:</span>
+                                        Documento que detalla cómo actuar ante emergencias, catástrofes o desastres,
+                                        incluyendo la comunicación a los trabajadores y los protocolos de evacuación.
+                                    </p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Procedimientos de Trabajo Seguro
+                                            (PTS):</span> Conjunto de normas para garantizar que las tareas se realicen
+                                        de forma segura, minimizando el riesgo de accidentes y enfermedades
+                                        profesionales.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Protocolos Ministeriales:</span>
+                                        Conjunto de directrices y procedimientos que se establecen en base a la técnica
+                                        vigente para estandarizar las acciones en la prevención de riesgos específicos,
+                                        como ruido o exposición a sílice.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Reglamento Interno:</span> Documento
+                                        obligatorio que establece derechos, obligaciones, prohibiciones y sanciones para
+                                        los trabajadores y el empleador en materia de higiene y seguridad.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Riesgo Laboral:</span> La posibilidad de
+                                        que un trabajador sufra un daño a su vida o salud debido a los peligros
+                                        presentes en su entorno de trabajo.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">SGSST (Sistema de Gestión de Seguridad y
+                                            Salud en el Trabajo):</span> Enfoque sistémico basado en el ciclo de mejora
+                                        continua (Planificar, Hacer, Verificar y Actuar) para la prevención de riesgos y
+                                        la protección de los trabajadores.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Sustitución:</span> Reemplazar procesos
+                                        o materiales peligrosos por otros menos riesgosos.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item">
+                                    <p><span class="sf-text-purple fw-bold">Vigilancia Ambiental:</span> La
+                                        observación continua y sistemática de los factores ambientales en el lugar de
+                                        trabajo que pueden afectar la salud de las personas.</p>
+                                    <hr>
+                                </div>
+                                <div class="card_item ">
+                                    <p><span class="sf-text-purple fw-bold">Vigilancia de la Salud:</span> El
+                                        conjunto de actividades para detectar tempranamente daños en la salud de los
+                                        trabajadores debido a su actividad laboral.</p>
+                                    <hr>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 mb-3 mb-md-0">
+                            <div class="d-flex justify-content-center">
+                                <a href="./doc/glosario.pdf" download class="sf-btn sf-btn-purple">
+                                    <i class="fa fa-download"></i> Descargar PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--estructura tematica-->
+                <div class="p-4 w-100" id="content4">
+                    <div class="">
+                        <h1 class="sf-txt-1xl-700 sf-text-center mb-0">Estructura <span
+                                class="sf-text-purple">temática</span>
+                        </h1>
+                        <p class="text-center mb-2">En este curso encontrarás estas <span class="purple">tres
+                                (3) lecciones</span> para el cuidado de tus manos en el trabajo.</p>
+                    </div>
+                    <!--Instruccion-->
+                    <div class="sf-text-center sf-py-5r">
+                        <i class="hipt hipt-light">
+                            <span class="web">
+                                Desliza el cursor sobre cada lección para mostrar su contenido
+                                <i class="icon-inline icon-inline--end fa-solid fa-arrow-turn-down"></i>
+                            </span>
+                            <span class="mobile">
+                                Lee atentamente el contenido de cada momento
+                                <i class="icon-inline icon-inline--end fa-solid fa-arrow-turn-down"></i>
+                            </span>
+                        </i>
+                    </div>
+
+                    <!--cards -->
+                    <div class="row mt-3">
+                        <div class="col-sm-12 col-md-4 col-lg-4 mb-3 mb-md-0">
+                            <div class="card-step">
+                                <img src="../../assets/img/fondos/momento_1.webp" alt="Imagen 1">
+                                <div class="card-info">
+                                    <h3>1-Teoría del Manejo Defensivo</h3>
+                                    <hr>
+                                    <p>Empezaremos por recordar algunos conceptos clave del MANEJO DEFENSIVO y sus
+                                        implicaciones para nuestro rol de
+                                        conductores en el trabajo.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4 mb-3 mb-md-0">
+                            <div class="card-step">
+                                <img src="../../assets/img/fondos/momento_2.webp" alt="Imagen 2">
+                                <div class="card-info">
+                                    <h3>2-Buenos hábitos de Manejo Defensivo</h3>
+                                    <hr>
+                                    <p>Se abordarán las buenas prácticas en el manejo defensivo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4 mb-3 mb-md-0">
+                            <div class="card-step">
+                                <img src="../../assets/img/fondos/momento_3.webp" alt="Imagen 3">
+                                <div class="card-info">
+                                    <h3>3-Factores para evitar Accidentes de Tránsito</h3>
+                                    <hr>
+                                    <p>Profundizaremos en los factores clave para evitar accidentes de tránsito.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="mt-3">
+            <!-- Botón "Comenzar el curso" -->
+            <p id="warning-msg" class="sf-msg sf-msg-warning">Por favor, revisa todas las secciones antes de comenzar el
+                curso.
+            </p>
+            <p id="success-msg" class="sf-msg sf-msg-success hidden">¡Perfecto! Ya puedes comenzar tu curso.</p>
+            <button class="sf-btn sf-btn-block sf-disabled" id="start-btn"
+                onclick="window.location.href='../leccion1/index.html'">
+                <i class="fas fa-hand-pointer"></i> Comenzar el curso</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="../../plugins/libs/component/slide_inicio.js"></script>
+    <!-- Script del Widget -->
+    <script src="../../plugins/libs/assetsWidget/js/widget.js"></script>
+    <!-- Script para activar el primer tab al cargar -->
+    <script>
+        window.addEventListener('load', function () {
+            // Activar el primer tab
+            if (typeof changeTab === 'function') {
+                changeTab(1);
+            } else {
+                setTimeout(function () {
+                    if (typeof changeTab === 'function') {
+                        changeTab(1);
+                    }
+                }, 100);
+            }
+
+            // Reiniciar solo el índice del slider
+            localStorage.setItem('cursoProgreso', JSON.stringify({
+                currentIndex: 0,
+                timestamp: new Date().toISOString()
+            }));
+        });
+    </script>
+</body>
+
+</html>
