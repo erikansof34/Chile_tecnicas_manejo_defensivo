@@ -6,7 +6,8 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    max-width: 1200px;
+    max-width: 87.5rem;
+    /* 1400px -> 87.5rem */
     margin: 0 auto;
 }
 
@@ -14,7 +15,7 @@
 .cards-container-acc-traf {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
     width: 100%;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -23,17 +24,20 @@
 
 /* Scrollbar personalizada para navegadores WebKit */
 .cards-container-acc-traf::-webkit-scrollbar {
-    height: 6px;
+    height: 0.375rem;
+    /* 6px -> 0.375rem */
 }
 
 .cards-container-acc-traf::-webkit-scrollbar-track {
     background: #f1f1f1;
-    border-radius: 3px;
+    border-radius: 0.188rem;
+    /* 3px -> 0.188rem */
 }
 
 .cards-container-acc-traf::-webkit-scrollbar-thumb {
     background: #888;
-    border-radius: 3px;
+    border-radius: 0.188rem;
+    /* 3px -> 0.188rem */
 }
 
 .cards-container-acc-traf::-webkit-scrollbar-thumb:hover {
@@ -43,34 +47,36 @@
 /* Estilo de cada tarjeta */
 .card-container-acc-traf {
     background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    padding: 0.5rem;
+    border-radius: 0.5rem;
+    /* 8px -> 0.5rem */
+    box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.1);
+    /* 2px 6px */
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: all 0.3s ease;
-    width: 270px;
-    /* Ancho fijo */
-    min-width: 270px;
-    /* Ancho mínimo fijo */
-    max-width: 270px;
-    /* Ancho máximo fijo */
-    /* height: 450px; */
-    /* Altura fija */
-    flex: 0 0 320px;
-    /* Flex fijo para evitar cambios de tamaño */
+    width: 20rem;
+    /* 320px -> 20rem */
+    min-width: 20rem;
+    /* 320px -> 20rem */
+    max-width: 20rem;
+    /* 320px -> 20rem */
+    flex: 0 0 21.875rem;
+    /* 350px -> 21.875rem */
     box-sizing: border-box;
 }
 
 .card-container-acc-traf.correct-acc-traf {
     background-color: #4caf50;
-    border: 1px solid #388e3c;
+    border: 0.063rem solid #388e3c;
+    /* 1px -> 0.063rem */
 }
 
 .card-container-acc-traf.incorrect-acc-traf {
     background-color: #f44336;
-    border: 1px solid #d32f2f;
+    border: 0.063rem solid #d32f2f;
+    /* 1px -> 0.063rem */
 }
 
 /* Textos en blanco cuando la card tiene color */
@@ -86,14 +92,15 @@
 /* Título de la tarjeta */
 .card-title-acc-traf {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 1.125rem;
+    /* 18px -> 1.125rem */
     font-weight: bold;
     color: #0f1721;
     text-align: center;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     width: 100%;
-    height: 20px;
-    /* Altura fija para el título */
+    min-height: 1.5rem;
+    /* 24px -> 1.5rem */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,27 +110,37 @@
 .image-container-acc-traf {
     position: relative;
     width: 100%;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
-    height: 120px;
-    /* Altura fija para el contenedor de imagen */
+    min-height: 9.375rem;
+    /* 150px -> 9.375rem */
 }
 
 /* Imagen de la tarjeta */
 .card-image-acc-traf {
-    width: 120px;
-    height: 120px;
+    width: 10rem;
+    /* 160px -> 10rem */
+    height: 10rem;
+    /* 160px -> 10rem */
+    max-width: 90%;
+    /* Para mayor responsividad */
     object-fit: contain;
-    border-radius: 6px;
+    border-radius: 0.375rem;
+    /* 6px -> 0.375rem */
+    border: 0.125rem solid #ddd;
+    /* 2px -> 0.125rem */
+    padding: 0.313rem;
+    /* 5px -> 0.313rem */
+    background-color: #f9f9f9;
 }
 
 /* Contenedor de textos informativos */
 .info-texts-container-acc-traf {
     width: 100%;
-    margin-bottom: 0.8rem;
-    height: 80px;
-    /* Altura fija para los textos informativos */
+    margin-bottom: 1rem;
+    min-height: 5.625rem;
+    /* 90px -> 5.625rem */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -132,14 +149,18 @@
 /* Texto informativo */
 .info-text-acc-traf {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
+    /* 16px -> 1rem */
     color: #333;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.25rem;
+    /* 4px -> 0.25rem */
     padding-left: 1rem;
     position: relative;
-    line-height: 1.3;
+    line-height: 1.4;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .info-text-acc-traf:before {
@@ -152,20 +173,23 @@
 .select-container-acc-traf {
     width: 100%;
     position: relative;
-    margin-bottom: 0.5rem;
-    height: 42px;
-    /* Altura fija para el select */
+    margin-bottom: 0.8rem;
+    min-height: 2.813rem;
+    /* 45px -> 2.813rem */
 }
 
 .select-container-acc-traf select {
     width: 100%;
     height: 100%;
-    padding: 0.5rem 0.8rem;
-    border: 1px solid #0f1721;
-    border-radius: 6px;
+    padding: 0.6rem 0.9rem;
+    border: 0.063rem solid #0f1721;
+    /* 1px -> 0.063rem */
+    border-radius: 0.375rem;
+    /* 6px -> 0.375rem */
     background-color: #f9f9f9;
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-size: 0.938rem;
+    /* 15px -> 0.938rem */
     color: #333;
     appearance: none;
     -webkit-appearance: none;
@@ -181,10 +205,10 @@
     content: "▼";
     position: absolute;
     top: 50%;
-    right: 0.8rem;
+    right: 0.9rem;
     transform: translateY(-50%);
     pointer-events: none;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: #0f1721;
 }
 
@@ -202,29 +226,35 @@
 /* Ícono de validación */
 .validation-icon-container-acc-traf {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 0.5rem;
+    /* 8px -> 0.5rem */
+    right: 0.5rem;
+    /* 8px -> 0.5rem */
     z-index: 10;
 }
 
 .validation-icon-acc-traf {
-    width: 25px;
-    height: 25px;
+    width: 1.75rem;
+    /* 28px -> 1.75rem */
+    height: 1.75rem;
+    /* 28px -> 1.75rem */
+    max-width: 100%;
     object-fit: contain;
 }
 
 /* Texto de feedback */
 .feedback-text-acc-traf {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
     width: 100%;
     text-align: center;
-    padding: 0.2rem;
-    border-radius: 4px;
-    height: 24px;
-    /* Altura fija para el feedback */
+    padding: 0.3rem;
+    border-radius: 0.25rem;
+    /* 4px -> 0.25rem */
+    min-height: 1.75rem;
+    /* 28px -> 1.75rem */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -241,8 +271,8 @@
 /* Contenedor de botones */
 .buttons-container-acc-traf {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
 }
 
 /* Estilos para botones deshabilitados */
@@ -259,42 +289,82 @@
 
 .results-text-acc-traf {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 1.063rem;
+    /* 17px -> 1.063rem */
     font-weight: bold;
     color: #8f8f8f;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Media queries para móvil */
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
+
+    /* 768px -> 48rem */
     .cards-container-acc-traf {
         flex-direction: column;
         align-items: center;
         flex-wrap: wrap;
         overflow-x: visible;
-        gap: 1rem;
+        gap: 1.2rem;
     }
 
     .card-container-acc-traf {
         width: 100%;
-        max-width: 350px;
+        max-width: 23.75rem;
+        /* 380px -> 23.75rem */
         min-width: unset;
         height: auto;
         margin: 0 auto;
         flex: none;
     }
 
+    .image-container-acc-traf {
+        min-height: auto;
+        height: auto;
+    }
+
+    .card-image-acc-traf {
+        width: 8rem;
+        /* Reducido para móviles */
+        height: 8rem;
+        /* Reducido para móviles */
+    }
+
     .info-texts-container-acc-traf {
+        min-height: auto;
         height: auto;
     }
 
     .info-text-acc-traf {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .buttons-container-acc-traf {
         flex-direction: column;
         align-items: center;
-        gap: 0.8rem;
+        gap: 1rem;
+    }
+
+    .select-container-acc-traf {
+        min-height: 2.5rem;
+        /* Ajustado para móviles */
+    }
+}
+
+/* Media query para tablets */
+@media (min-width: 48.063rem) and (max-width: 64rem) {
+
+    /* 769px a 1024px */
+    .card-container-acc-traf {
+        width: 18rem;
+        /* Ajustado para tablets */
+        min-width: 18rem;
+        max-width: 18rem;
+        flex: 0 0 18rem;
+    }
+
+    .card-image-acc-traf {
+        width: 8rem;
+        height: 8rem;
     }
 }
