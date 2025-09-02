@@ -23,8 +23,17 @@ export function init() {
   let selectedPositions = {};
   let items = Array.from(sortableContainer.querySelectorAll('.sortable-item-dadarrast'));
 
-  // Inicializar
-  shuffleItems();
+  // Inicializar con el orden específico: 5, 3, 4, 1, 2
+  const initialOrder = [
+    "horizontales_sld18", // 5
+    "semaforos_sld18",    // 3
+    "verticales_sld18",   // 4
+    "agente_transito_sld18", // 1
+    "señales_transitorias_sld18" // 2
+  ];
+
+  setInitialOrder(initialOrder);
+
   if (isMobile) {
     initMobileView();
   } else {
@@ -37,14 +46,19 @@ export function init() {
   window.addEventListener('resize', handleResize);
 
   // Funciones
-  function shuffleItems() {
-    // Mezclar elementos para desktop
-    for (let i = items.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      sortableContainer.appendChild(items[j]);
-    }
+  function setInitialOrder(order) {
+    // Limpiar el contenedor
+    sortableContainer.innerHTML = '';
 
-    // Reordenar el array para reflejar el nuevo orden
+    // Agregar elementos en el orden específico
+    order.forEach(id => {
+      const item = items.find(item => item.getAttribute('data-id') === id);
+      if (item) {
+        sortableContainer.appendChild(item);
+      }
+    });
+
+    // Actualizar el array de items
     items = Array.from(sortableContainer.querySelectorAll('.sortable-item-dadarrast'));
   }
 
@@ -67,6 +81,11 @@ export function init() {
         document.body.style.overflow = '';
         hasInteraction = true;
         validateBtn.disabled = false;
+
+        // Si ya se validó previamente, deshabilitar el botón de validar
+        if (isValidated) {
+          validateBtn.disabled = true;
+        }
       });
     });
 
@@ -104,13 +123,13 @@ export function init() {
     mobileContainer.style.display = 'flex';
     mobileContainer.innerHTML = '';
 
-    // Crear elementos móviles
+    // Crear elementos móviles en el orden específico: 5, 3, 4, 1, 2
     const mobileOrder = [
-      "señales_transitorias_sld18",
-      "horizontales_sld18",
-      "agente_transito_sld18",
-      "verticales_sld18",
-      "semaforos_sld18"
+      "horizontales_sld18", // 5
+      "semaforos_sld18",    // 3
+      "verticales_sld18",   // 4
+      "agente_transito_sld18", // 1
+      "señales_transitorias_sld18" // 2
     ];
 
     mobileOrder.forEach(id => {
@@ -132,23 +151,39 @@ export function init() {
 
         select.addEventListener('change', (e) => {
           const position = parseInt(e.target.value);
+          const previousPosition = selectedPositions[id];
           selectedPositions[id] = position;
           hasInteraction = true;
 
+          // Habilitar la opción previamente seleccionada en otros selects
+          if (previousPosition) {
+            document.querySelectorAll('.mobile-select-dadarrast').forEach(otherSelect => {
+              if (otherSelect !== select) {
+                const option = otherSelect.querySelector(`option[value="${previousPosition}"]`);
+                if (option) option.disabled = false;
+              }
+            });
+          }
+
           // Deshabilitar esta opción en otros selects
-          document.querySelectorAll('.mobile-select-dadarrast').forEach(otherSelect => {
-            if (otherSelect !== select) {
-              Array.from(otherSelect.options).forEach(option => {
-                if (option.value === e.target.value && option.value !== "") {
-                  option.disabled = true;
-                }
-              });
-            }
-          });
+          if (position) {
+            document.querySelectorAll('.mobile-select-dadarrast').forEach(otherSelect => {
+              if (otherSelect !== select) {
+                const option = otherSelect.querySelector(`option[value="${position}"]`);
+                if (option) option.disabled = true;
+              }
+            });
+          }
 
           // Habilitar el botón de validar si todos tienen selección
-          const allSelected = Object.keys(selectedPositions).length === items.length;
+          const allSelected = Object.keys(selectedPositions).length === items.length &&
+            Object.values(selectedPositions).every(pos => pos !== undefined && pos !== "");
           validateBtn.disabled = !allSelected;
+
+          // Si ya se validó previamente, deshabilitar el botón de validar
+          if (isValidated) {
+            validateBtn.disabled = true;
+          }
         });
 
         mobileItem.appendChild(select);
@@ -160,6 +195,7 @@ export function init() {
   function handleValidate() {
     isValidated = true;
     resetBtn.disabled = false;
+    validateBtn.disabled = true; // Deshabilitar el botón de validar después de la validación
 
     let results = [];
 
@@ -168,16 +204,19 @@ export function init() {
       items.forEach(item => {
         const id = item.getAttribute('data-id');
         const position = selectedPositions[id];
-        const isCorrect = position === (correctOrder.indexOf(id) + 1);
+        const correctPosition = correctOrder.indexOf(id) + 1;
+        const isCorrect = position === correctPosition;
 
-        results.push({ id, isCorrect });
+        results.push({ id, isCorrect, correctPosition, currentPosition: position });
 
         const mobileItem = document.querySelector(`.mobile-item-dadarrast[data-id="${id}"]`);
         if (mobileItem) {
           if (isCorrect) {
             mobileItem.classList.add('correct-item-dadarrast');
+            mobileItem.classList.remove('incorrect-item-dadarrast');
           } else {
             mobileItem.classList.add('incorrect-item-dadarrast');
+            mobileItem.classList.remove('correct-item-dadarrast');
           }
 
           // Agregar icono de validación
@@ -185,7 +224,7 @@ export function init() {
           iconDiv.className = 'validation-icon-dadarrast';
 
           const icon = document.createElement('img');
-          icon.src = isCorrect ? './momento3_5/img/checkAct.png' : './momento3_5/img/xmarkAct.png';
+          icon.src = isCorrect ? '../../assets/img/btn_validacion/checkAct.png' : '../../assets/img/btn_validacion/xmarkAct.png';
           icon.alt = isCorrect ? 'Correcto' : 'Incorrecto';
 
           iconDiv.appendChild(icon);
@@ -197,22 +236,31 @@ export function init() {
         }
       });
     } else {
-      // Validar para desktop
+      // Validar para desktop - CORREGIDO
       const currentOrder = Array.from(sortableContainer.querySelectorAll('.sortable-item-dadarrast'))
         .map(item => item.getAttribute('data-id'));
 
-      results = currentOrder.map((id, index) => {
-        const isCorrect = id === correctOrder[index];
-        return { id, isCorrect };
+      // Validar cada elemento individualmente según su posición correcta
+      results = items.map((item) => {
+        const id = item.getAttribute('data-id');
+        const currentIndex = currentOrder.indexOf(id);
+        const correctIndex = correctOrder.indexOf(id);
+        const isCorrect = currentIndex === correctIndex;
+
+        return { id, isCorrect, currentIndex, correctIndex };
       });
 
       // Aplicar estilos de validación
-      items.forEach((item, index) => {
-        const result = results[index];
+      items.forEach((item) => {
+        const id = item.getAttribute('data-id');
+        const result = results.find(r => r.id === id);
+
         if (result.isCorrect) {
           item.classList.add('correct-item-dadarrast');
+          item.classList.remove('incorrect-item-dadarrast');
         } else {
           item.classList.add('incorrect-item-dadarrast');
+          item.classList.remove('correct-item-dadarrast');
         }
 
         // Agregar icono de validación
@@ -277,19 +325,29 @@ export function init() {
         if (icon) icon.remove();
 
         const select = item.querySelector('select');
+        const previousValue = select.value;
         select.value = "";
-        select.disabled = false;
 
         // Habilitar todas las opciones
         Array.from(select.options).forEach(option => {
           option.disabled = false;
         });
+
+        select.disabled = false;
       });
 
       validateBtn.disabled = true;
     } else {
-      // Reiniciar vista desktop
-      shuffleItems();
+      // Restablecer el orden inicial específico: 5, 3, 4, 1, 2
+      const initialOrder = [
+        "horizontales_sld18", // 5
+        "semaforos_sld18",    // 3
+        "verticales_sld18",   // 4
+        "agente_transito_sld18", // 1
+        "señales_transitorias_sld18" // 2
+      ];
+
+      setInitialOrder(initialOrder);
 
       document.querySelectorAll('.sortable-item-dadarrast').forEach(item => {
         item.classList.remove('correct-item-dadarrast', 'incorrect-item-dadarrast', 'dragging');
@@ -299,7 +357,7 @@ export function init() {
         item.setAttribute('draggable', 'true');
       });
 
-      validateBtn.disabled = false;
+      validateBtn.disabled = true; // Deshabilitar el botón de validar al reiniciar
     }
 
     resetBtn.disabled = true;

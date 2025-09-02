@@ -1,9 +1,9 @@
 .mb-20 {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 
 .p-ancho {
-    padding: 3rem;
+    padding: 2rem;
 }
 
 .dp-none {
@@ -24,17 +24,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5px;
+    padding: 0.5rem;
     font-family: Arial, sans-serif;
-    max-width: 1000px;
+    max-width: 75rem;
+    width: 90%;
     margin: 0 auto;
 }
 
 .cards-container-dadstrans {
     display: flex;
     justify-content: center;
-    gap: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 1.5rem;
     flex-wrap: wrap;
     width: 100%;
 }
@@ -43,14 +43,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 200px;
-    padding: 15px;
+    width: 16rem;
+    padding: 1rem;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
     border: 1px solid #e0e0e0;
     transition: all 0.3s ease;
-    margin: 10px;
+    margin: 0.5rem;
 }
 
 .card-dadstrans.correct-card-dadstrans {
@@ -65,16 +65,16 @@
 
 .image-container-dadstrans {
     position: relative;
-    width: 160px;
-    height: 160px;
-    margin-bottom: 15px;
+    width: 12rem;
+    height: 12rem;
+    margin-bottom: 1rem;
 }
 
 .signal-image-dadstrans {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 0.4rem;
 }
 
 .validation-icon-dadstrans {
@@ -82,8 +82,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
+    width: 3.5rem;
+    height: 3.5rem;
     z-index: 2;
 }
 
@@ -95,15 +95,15 @@
 
 .drop-zone-dadstrans {
     width: 100%;
-    min-height: 3.375rem;
+    min-height: 3rem;
     border: 2px dashed #ccc;
-    border-radius: 8px;
+    border-radius: 0.4rem;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f9f9f9;
     transition: all 0.3s ease;
-    font-size: 16px;
+    font-size: 0.9rem;
 }
 
 .drop-zone-dadstrans.drop-over-dadstrans {
@@ -121,12 +121,12 @@
 }
 
 .dropped-item-dadstrans {
-    padding: 16px 15px;
+    padding: 0.8rem 0.9rem;
     background-color: #102044;
     color: white;
-    border-radius: 6px;
+    border-radius: 0.4rem;
     text-align: center;
-    font-size: 16px;
+    font-size: 0.9rem;
     width: 100%;
     box-sizing: border-box;
     transition: all 0.3s ease;
@@ -143,8 +143,8 @@
 .drag-container-dadstrans {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
     flex-wrap: wrap;
     width: 100%;
     transition: all 0.3s ease;
@@ -157,16 +157,16 @@
 }
 
 .drag-item-dadstrans {
-    padding: 12px 20px;
+    padding: 0.8rem 1.2rem;
     background-color: #102044;
     color: white;
-    border-radius: 6px;
+    border-radius: 0.4rem;
     cursor: grab;
     user-select: none;
-    min-width: 160px;
+    min-width: 12rem;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    font-size: 16px;
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
 }
 
 .drag-item-dadstrans:active {
@@ -176,22 +176,23 @@
 /* Mensaje de validación */
 .validation-message-dadstrans {
     text-align: center;
-    border-radius: 8px;
-    margin-bottom: 5px;
+    border-radius: 0.4rem;
+    margin-bottom: 0.5rem;
+    padding: 0.8rem;
 }
 
 .validation-text-dadstrans {
     color: #8f8f8f;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
 }
 
 .validation-score-dadstrans {
     color: #8f8f8f;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
 }
 
 /* Estilos para móvil */
@@ -202,11 +203,11 @@
 .mobile-select-dadstrans {
     font-family: 'Montserrat';
     width: 100%;
-    padding: 10px;
-    border-radius: 6px;
+    padding: 0.6rem;
+    border-radius: 0.4rem;
     border: 1px solid #ccc;
-    font-size: 16px;
-    margin-top: 10px;
+    font-size: 0.9rem;
+    margin-top: 0.6rem;
     background-color: #f9f9f9;
     color: #333;
     transition: all 0.3s ease;
@@ -227,20 +228,21 @@
 .button-container-dadstrans {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 0.8rem;
+    margin-top: 1rem;
 }
 
 .button-container-dadstrans button {
     transition: all 0.3s ease;
-    padding: 10px 20px;
+    padding: 0.7rem 1.2rem;
     border: none;
-    border-radius: 30px;
-    font-size: 16px;
+    border-radius: 1.5rem;
+    font-size: 0.9rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 .button-container-dadstrans button:disabled {
@@ -266,9 +268,9 @@
     }
 
     .card-dadstrans {
-        width: 80%;
-        max-width: 300px;
-        margin-bottom: 20px;
+        width: 100%;
+        max-width: 20rem;
+        margin-bottom: 1rem;
     }
 
     .drop-zone-dadstrans {
@@ -276,18 +278,18 @@
     }
 
     .image-container-dadstrans {
-        width: 200px;
-        height: 200px;
+        width: 13rem;
+        height: 13rem;
     }
 
     .button-container-dadstrans {
-        flex-direction: row;
-        gap: 10px;
+        flex-direction: column;
+        gap: 0.6rem;
     }
 
     .button-container-dadstrans button {
-        width: auto;
-        padding: 10px 15px;
+        width: 100%;
+        padding: 0.7rem 1rem;
     }
 }
 
